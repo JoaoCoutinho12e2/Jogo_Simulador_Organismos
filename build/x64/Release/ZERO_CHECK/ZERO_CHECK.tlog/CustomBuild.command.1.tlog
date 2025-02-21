@@ -1,0 +1,10 @@
+^C:\USERS\11PI08\DOWNLOADS\TLP\JOGO_SIMULADOR_ORGANISMOS\BUILD\CMAKEFILES\C75FD4AD22F721F0C703CDC7318FCF1E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/11PI08/Downloads/TLP/Jogo_Simulador_Organismos -BC:/Users/11PI08/Downloads/TLP/Jogo_Simulador_Organismos/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/11PI08/Downloads/TLP/Jogo_Simulador_Organismos/build/SimuladorOrganismos.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

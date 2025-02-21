@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\Jogo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\Simulacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\Ambiente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\Organismo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\UI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\Utilitarios.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\src\EvolucaoArvore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\11PI08\Downloads\TLP\Jogo_Simulador_Organismos\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B3FD81C4-2922-3885-904D-689F4C98648C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
