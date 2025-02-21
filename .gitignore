@@ -1,0 +1,26 @@
+# Ignore build output directories
+bin/
+obj/
+out/
+bin/
+build/
+
+# Ignore user-specific files from IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore temporary and log files
+*.log
+tmp/
+temp/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore backup files
+*~
