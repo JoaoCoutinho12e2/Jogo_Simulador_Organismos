@@ -14,11 +14,25 @@
 #endif
 
 // Suporte para UTF-8
+// Inicializa a consola para suportar UTF-8 e define a fonte para Consolas (apenas para Windows)
 void InterfaceUtilizador::inicializarConsola()
 {
 #ifdef _WIN32
-    SetConsoleOutputCP(65001);  // UTF-8
-    SetConsoleCP(65001);        // UTF-8 input
+    // Define a página de código de saída da consola para UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    // Define a página de código de entrada da consola para UTF-8
+    SetConsoleCP(CP_UTF8);
+
+    // Estrutura para definir informações da fonte da consola
+    CONSOLE_FONT_INFOEX cfi;
+    cfi.cbSize = sizeof(cfi);
+    cfi.nFont = 0;
+    cfi.dwFontSize.X = 0;
+    cfi.dwFontSize.Y = 16;
+    cfi.FontFamily = FF_DONTCARE;
+    cfi.FontWeight = FW_NORMAL;
+    wcscpy_s(cfi.FaceName, L"Consolas");
+    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 #endif
 }
 
@@ -36,7 +50,7 @@ void InterfaceUtilizador::limparConsola()
 void InterfaceUtilizador::mostrarMenu()
 {
     std::cout << "\n┌──────────────────────────────────┐\n";
-    std::cout << "│     Simulador de Evolução v1.0    │\n";
+    std::cout << "│     Simulador de Evolução v1.0   │\n";
     std::cout << "├──────────────────────────────────┤\n";
     std::cout << "│ 1. Coletar Energia               │\n";
     std::cout << "│ 2. Ver Estatísticas              │\n";
@@ -212,9 +226,6 @@ void InterfaceUtilizador::pausar()
 {
     // 1. Limpar buffer de entrada(cache)
     std::cin.ignore(1000,'\n');
-
-    // 2. Console
-    limparConsola();
 
     // 3. Pausar até que o utilizador pressione Enter
     std::cout << "\nAperta Enter para continuar...";

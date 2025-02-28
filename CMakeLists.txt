@@ -26,7 +26,7 @@ set(SOURCES
 )
 
 # Define o diretório onde será gerado o executável
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # Define o nome do executável e os arquivos fonte que serão compilados
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -36,9 +36,10 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_link_libraries(${PROJECT_NAME} stdc++fs)
 endif()
 
-# Define as opções de compilação
+# Suporte a UTF-8
 if(MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+    add_compile_options(/utf-8)
+    add_definitions(-D_UNICODE -DUNICODE)
 else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
 endif()

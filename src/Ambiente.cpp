@@ -55,21 +55,26 @@ void Ambiente::removerOrganismo(int indice)
 // Atualizar temperatura
 void Ambiente::atualizarRecursos()
 {
-
     // Inicializar consumo total
     double consumoTotal = 0.0;
 
-    // Calcula o consumo total de recursos
+    // Calcula o consumo total de recursos com limite de segurança
     for (auto organismo : organismos)
     {
-
-        // Adiciona o consumo de energia do organismo ao consumo total
-        consumoTotal += organismo->getConsumoEnergia();
+        // Limita o consumo individual para evitar overflow
+        double consumoIndividual = std::min(organismo->getConsumoEnergia(), recursos * 0.1);
+        consumoTotal += consumoIndividual;
     }
 
+    // Limita o consumo total aos recursos disponíveis
+    consumoTotal = std::min(consumoTotal, recursos);
+    
     // Atualiza os recursos disponíveis
     recursos -= consumoTotal;
 
-    // Garante que os recursos não fiquem negativos
-    recursos = std::max(0.0, recursos);
+    // Adiciona uma pequena regeneração de recursos
+    recursos += 50.0; // Valor base de regeneração
+    
+    // Garante que os recursos fiquem dentro de limites razoáveis
+    recursos = std::min(std::max(0.0, recursos), 10000.0);
 }

@@ -72,17 +72,12 @@ void Simulacao::executarGeracao()
             if (Utilitarios::numeroAleatorioDouble(0, 1) < org->getTaxaReproducao())
             {
 
-                // Reproduzir organismo
-                org->reproduzir();
-
-                // Adicionar novo organismo ao ambiente
-                Organismo *novoOrg = new Organismo(*org);
-
-                // Adicionar mutação ao novo organismo
-                novoOrg->mutar();
-
-                // Adicionar novo organismo ao ambiente
-                ambiente->adicionarOrganismo(novoOrg);
+                if (organismos.size() < 1000)  // Limite máximo de organismos
+                {
+                    Organismo *novoOrg = new Organismo(*org);
+                    novoOrg->mutar();
+                    ambiente->adicionarOrganismo(novoOrg);
+                }
             }
 
             // Incrementar iterador
